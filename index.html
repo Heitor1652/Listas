@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <main class="container" id="app" aria-labelledby="app-title">
+    <h1 id="app-title">To-Do List</h1>
+
+    <form id="task-form" aria-label="Formulário de nova tarefa">
+      <label for="task-input" class="sr-only">Nova tarefa</label>
+      <input id="task-input" name="task" type="text" placeholder="Adicione uma nova tarefa..." autocomplete="off" required />
+      <button type="submit" id="add-btn">Adicionar</button>
+    </form>
+
+    <section class="controls">
+      <div class="stats" aria-live="polite">
+        <span id="total-count">0</span> tarefas • <span id="done-count">0</span> concluídas
+      </div>
+      <div class="filters" role="tablist" aria-label="Filtro de tarefas">
+        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">Todas</button>
+        <button class="filter-btn" data-filter="active" role="tab" aria-selected="false">Ativas</button>
+        <button class="filter-btn" data-filter="completed" role="tab" aria-selected="false">Concluídas</button>
+      </div>
+    </section>
+
+    <ul id="task-list" aria-live="polite"></ul>
+
+    <div class="footer">
+      <button id="clear-completed">Limpar concluídas</button>
+      <button id="export">Exportar JSON</button>
+      <button id="import">Importar JSON</button>
+      <input type="file" id="import-file" accept="application/json" style="display:none" />
+    </div>
+  </main>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>

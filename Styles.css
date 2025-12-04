@@ -1,0 +1,83 @@
+/* Reset simples */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body,#app { height: 100%; }
+
+body {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg,#f2f5fb,#ffffff);
+  color: #111827;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 720px;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 30px rgba(15,23,42,0.08);
+}
+
+/* Header */
+h1 {
+  font-size: 1.4rem;
+  margin-bottom: 16px;
+}
+
+/* Form */
+#task-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+#task-input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #e6e9ef;
+  font-size: 1rem;
+}
+#add-btn {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+}
+#add-btn:active { transform: translateY(1px); }
+
+/* Controls */
+.controls { display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; gap:12px; flex-wrap:wrap; }
+.filters { display:flex; gap:8px; }
+.filter-btn {
+  padding:6px 10px; border-radius:8px; border:1px solid transparent; background:transparent; cursor:pointer;
+}
+.filter-btn.active {
+  background:#eef2ff; border-color:#c7d2fe;
+}
+
+/* Task list */
+#task-list { list-style:none; display:flex; flex-direction:column; gap:8px; padding-bottom:12px; }
+.task-item {
+  display:flex; align-items:center; gap:12px; padding:10px; border-radius:10px;
+  border:1px solid #f1f5f9; background:#ffffff;
+}
+.task-item .title { flex:1; word-break:break-word; }
+.task-item.completed .title { text-decoration:line-through; color:#6b7280; opacity:0.9; }
+
+/* buttons inside task */
+.task-actions { display:flex; gap:6px; align-items:center; }
+.icon-btn { background:transparent; border:none; cursor:pointer; padding:6px; border-radius:6px; }
+.icon-btn:hover { background:#f3f4f6; }
+
+/* Footer */
+.footer { display:flex; gap:8px; justify-content:flex-end; margin-top:8px; }
+.footer button { padding:8px 10px; border-radius:8px; border:1px solid #e5e7eb; background:white; cursor:pointer; }
+
+/* Accessibility helper */
+.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
